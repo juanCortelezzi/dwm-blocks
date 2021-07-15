@@ -1,4 +1,8 @@
 #!/bin/bash
 
-echo "$(pulsemixer --get-volume | sed 's| |/|g')"
+if [[ "$(pulsemixer --get-mute)" == 0 ]]; then
+    pulsemixer --get-volume | cut -d ' ' -f1
+else
+    echo "-1"
+fi
 
