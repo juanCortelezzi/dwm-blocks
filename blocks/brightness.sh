@@ -1,4 +1,4 @@
 #!/bin/bash
 
-xbacklight -get
+echo -e "[  $(xbacklight -get) ]"
 

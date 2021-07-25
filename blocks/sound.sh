@@ -1,8 +1,10 @@
 #!/bin/bash
 
+volume=
 if [[ "$(pulsemixer --get-mute)" == 0 ]]; then
-    pulsemixer --get-volume | cut -d ' ' -f1
+    volume=$(pulsemixer --get-volume | cut -d ' ' -f1)
 else
-    echo "-1"
+    volume="-1"
 fi
 
+echo -e "[ 蓼 $volume ]"
