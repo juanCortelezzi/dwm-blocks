@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo -e "[  $(xbacklight -get) ]"
+command=$(xbacklight -get | sed "s/\(.*\)\..*/\1/g")
+
+echo -e "[  $command ]"
